@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, LowerCasePipe, NgClass } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
   Observable,
@@ -15,12 +15,15 @@ import {
 } from 'rxjs';
 import { EmergencyService } from '../../services/emergency.service';
 import { FirstAidGuide, sortBy } from '../../models/emergency.model';
-import { GuideCardComponent } from './guide-card.component';
 
+/**
+ * Topics: HttpClient + Observables, async pipe, RxJS operators, reactive FormControl,
+ * lifecycle hooks, property/event/class binding, built-in pipes, generics (sortBy).
+ */
 @Component({
   selector: 'app-first-aid',
   standalone: true,
-  imports: [AsyncPipe, ReactiveFormsModule, GuideCardComponent],
+  imports: [AsyncPipe, LowerCasePipe, NgClass, ReactiveFormsModule],
   templateUrl: './first-aid.component.html'
 })
 export class FirstAidComponent implements OnInit, OnDestroy {

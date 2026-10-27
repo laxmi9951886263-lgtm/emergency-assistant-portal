@@ -1,3 +1,31 @@
-   {
-     "requests": []
-   }
+{
+  "requests": [
+    {
+      "id": 1,
+      "name": "Test User",
+      "phone": "9876543210",
+      "type": "Medical Emergency",
+      "severity": "High",
+      "address": "Hyderabad",
+      "description": "Local API verification test",
+      "createdAt": "2026-10-27T12:53:27.650Z",
+      "status": "Pending"
+    },
+    {
+      "id": 2,
+      "name": "Nagalaxmi Suguri",
+      "phone": "7981253030",
+      "type": "Fire",
+      "severity": "High",
+      "address": "Annapurna Nagar, Ward 82 Golnaka, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Uppal mandal, Medchal–Malkajgiri, Telangana, 500036, India",
+      "description": "come fast as much as possible",
+      "location": {
+        "latitude": 17.382649437335182,
+        "longitude": 78.516289304025,
+        "address": "Annapurna Nagar, Ward 82 Golnaka, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Uppal mandal, Medchal–Malkajgiri, Telangana, 500036, India"
+      },
+      "createdAt": "2026-10-27T13:00:46.165Z",
+      "status": "Pending"
+    }
+  ]
+}

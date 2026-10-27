@@ -11,7 +11,34 @@
 @if (guides$ | async; as guides) {
   <div class="grid">
     @for (g of guides; track g.id) {
-      <app-guide-card [guide]="g" [expanded]="selectedId === g.id" (toggled)="toggle($event)" />
+      <article class="card guide" [class.open]="selectedId === g.id">
+        <header class="guide-head">
+          <p class="icon" aria-hidden="true">{{ g.icon }}</p>
+          <h2>{{ g.title }}</h2>
+          <span class="badge" [ngClass]="'sev-' + (g.severity | lowercase)">{{ g.severity }}</span>
+        </header>
+        <p>{{ g.summary }}</p>
+
+        <button type="button" class="btn btn-small" (click)="toggle(g.id)"
+                [attr.aria-expanded]="selectedId === g.id">
+          {{ selectedId === g.id ? 'Hide steps' : 'Show steps' }}
+        </button>
+
+        @if (selectedId === g.id) {
+          <ol class="steps">
+            @for (step of g.steps; track $index) {
+              <li>{{ step }}</li>
+            }
+          </ol>
+          @if (g.warnings?.length) {
+            <ul class="warnings">
+              @for (w of g.warnings; track $index) {
+                <li>{{ w }}</li>
+              }
+            </ul>
+          }
+        }
+      </article>
     } @empty {
       <p>No guides match your search. Try a shorter word.</p>
     }

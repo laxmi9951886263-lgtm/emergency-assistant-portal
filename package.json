@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "api": "json-server --watch db.json --port 3001",
-    "build": "ng build"
+    "api": "npm --prefix backend start",
+    "build": "ng build",
+    "api:dev": "npm --prefix backend run dev",
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +24,6 @@
     "@angular/build": "^20.0.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
-    "json-server": "^0.17.4",
     "typescript": "~5.8.0"
   }
 }

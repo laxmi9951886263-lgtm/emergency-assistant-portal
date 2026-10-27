@@ -15,7 +15,7 @@ import {
  */
 @Injectable({ providedIn: 'root' })
 export class EmergencyService {
- private readonly apiUrl = 'http://localhost:3001/requests'; // json-server (npm run api)
+  private readonly apiUrl = 'http://localhost:3000/api/requests'; // Node.js + Express API (npm run api)
   private readonly fallbackStore = new LocalStore<EmergencyRequest>('eap-requests');
   private readonly contactsNamespace = 'http://emergency-portal.example/contacts';
 

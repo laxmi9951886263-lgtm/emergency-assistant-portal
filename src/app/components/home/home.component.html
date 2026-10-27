@@ -12,7 +12,7 @@
 
 <section aria-labelledby="quick-title">
   <h2 id="quick-title">What is happening?</h2>
-  <div class="grid quick-grid">
+  <div class="grid">
     @for (item of quickActions; track item.type) {
       <article class="card" [appHighlight]="'#fff0f0'">
         <p class="icon" aria-hidden="true">{{ item.icon }}</p>

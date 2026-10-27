@@ -37,7 +37,4 @@
   topButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
-  // ----- Load the ES module (classes, inheritance, callbacks) with a dynamic import -----
-  import('./tips-bar.js').catch((error) => console.error('Could not load tips-bar.js', error));
 })();

@@ -12,7 +12,6 @@ import { Subject, takeUntil } from 'rxjs';
 import { EmergencyService } from '../../services/emergency.service';
 import { LocationService } from '../../services/location.service';
 import { TimeAgoPipe } from '../../pipes/time-ago.pipe';
-import { HasUnsavedChanges } from '../../guards/unsaved-changes.guard';
 import {
   EmergencyRequest,
   EmergencyType,
@@ -40,7 +39,7 @@ function minWords(count: number): ValidatorFn {
   imports: [ReactiveFormsModule, TimeAgoPipe],
   templateUrl: './emergency-request.component.html'
 })
-export class EmergencyRequestComponent implements OnInit, OnDestroy, HasUnsavedChanges {
+export class EmergencyRequestComponent implements OnInit, OnDestroy {
   private readonly fb = inject(FormBuilder);
   private readonly route = inject(ActivatedRoute);
   private readonly emergencyService = inject(EmergencyService);
@@ -83,11 +82,6 @@ export class EmergencyRequestComponent implements OnInit, OnDestroy, HasUnsavedC
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  /** Used by the route guard to warn before leaving a half-filled form. */
-  hasUnsavedChanges(): boolean {
-    return this.form.dirty && !this.submitting;
   }
 
   // ---------- Helpers used by the template ----------
