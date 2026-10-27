@@ -1,0 +1,31 @@
+<article class="card guide" [class.open]="expanded">
+  <header class="guide-head">
+    <p class="icon" aria-hidden="true">{{ guide.icon }}</p>
+    <h2>{{ guide.title }}</h2>
+    <span class="badge" [ngClass]="'sev-' + (guide.severity | lowercase)">{{ guide.severity }}</span>
+  </header>
+  <p>{{ guide.summary }}</p>
+  <p class="hint">{{ stepCount }} steps</p>
+
+  <div class="card-actions">
+    <button type="button" class="btn btn-small" (click)="toggled.emit(guide.id)" [attr.aria-expanded]="expanded">
+      {{ expanded ? 'Hide steps' : 'Show steps' }}
+    </button>
+    <a class="btn btn-small btn-ghost" [routerLink]="['/first-aid', guide.id]">Open full page</a>
+  </div>
+
+  @if (expanded) {
+    <ol class="steps">
+      @for (step of guide.steps; track $index) {
+        <li>{{ step }}</li>
+      }
+    </ol>
+    @if (guide.warnings?.length) {
+      <ul class="warnings">
+        @for (w of guide.warnings; track $index) {
+          <li>{{ w }}</li>
+        }
+      </ul>
+    }
+  }
+</article>

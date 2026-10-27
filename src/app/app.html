@@ -1,0 +1,29 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand"><span aria-hidden="true">🚑</span> {{ title }}</a>
+
+    <button type="button" class="menu-toggle" (click)="toggleMenu()"
+            [attr.aria-expanded]="menuOpen" aria-controls="main-nav">Menu</button>
+
+    <nav id="main-nav" [class.open]="menuOpen" aria-label="Main navigation">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a></li>
+        <li><a routerLink="/contacts" routerLinkActive="active" (click)="closeMenu()">Contacts</a></li>
+        <li><a routerLink="/first-aid" routerLinkActive="active" (click)="closeMenu()">First aid</a></li>
+        <li><a routerLink="/request" routerLinkActive="active" (click)="closeMenu()">Request help</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ today | date: 'yyyy' }} {{ title }}. In a life-threatening emergency, call <a href="tel:112">112</a>.</p>
+  </div>
+</footer>

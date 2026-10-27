@@ -1,0 +1,64 @@
+<!-- Unit I: semantic elements (section, article, aside, header, nav, footer), headings, paragraphs, links, lists, table -->
+<section class="hero" aria-labelledby="hero-title">
+  <h1 id="hero-title">Get help fast. Know what to do while you wait.</h1>
+  <p class="lead">
+    Call the right service, send your location, and follow clear first aid steps.
+  </p>
+  <div class="actions">
+    <a class="btn btn-danger" href="tel:112">Call 112</a>
+    <a class="btn" routerLink="/request">Request help online</a>
+  </div>
+</section>
+
+<section aria-labelledby="quick-title">
+  <h2 id="quick-title">What is happening?</h2>
+  <div class="grid quick-grid">
+    @for (item of quickActions; track item.type) {
+      <article class="card" [appHighlight]="'#fff0f0'">
+        <p class="icon" aria-hidden="true">{{ item.icon }}</p>
+        <h3>{{ item.type | uppercase }}</h3>
+        <p>{{ item.text }}</p>
+        <a [routerLink]="['/request']" [queryParams]="{ type: item.type }">Request {{ item.type }} help</a>
+      </article>
+    }
+  </div>
+</section>
+
+<section aria-labelledby="numbers-title">
+  <h2 id="numbers-title">Numbers to remember</h2>
+  <div class="table-wrap">
+    <table class="data-table">
+      <caption>Main emergency helplines in India</caption>
+      <thead>
+        <tr>
+          <th scope="col">Service</th>
+          <th scope="col">Number</th>
+          <th scope="col">Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (h of helplines; track h.service) {
+          <tr>
+            <th scope="row">{{ h.service }}</th>
+            <td><a [href]="'tel:' + h.number.split(' ')[0]">{{ h.number }}</a></td>
+            <td>{{ h.note }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <p><a routerLink="/contacts">See all contacts</a></p>
+</section>
+
+<aside class="tip" aria-labelledby="tip-title">
+  <h2 id="tip-title">Before you call</h2>
+  <ol>
+    <li>Stay calm and move to a safe place.</li>
+    <li>Say <strong>where</strong> you are and <span class="mark">what</span> happened.</li>
+    <li>Do not hang up until the operator says so.</li>
+  </ol>
+  <details>
+    <summary>Why share my location?</summary>
+    <p>Responders reach you faster when they know the exact address or landmark.</p>
+  </details>
+</aside>

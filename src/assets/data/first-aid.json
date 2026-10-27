@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "title": "CPR (adult)",
+    "icon": "❤️",
+    "severity": "Critical",
+    "summary": "For a person who is unresponsive and not breathing normally.",
+    "steps": [
+      "Check the scene is safe, then tap the person and shout to see if they respond.",
+      "Call 108 or 112, or ask someone nearby to call. Ask for an AED if one is available.",
+      "Place the heel of one hand on the centre of the chest, with the other hand on top.",
+      "Push hard and fast: about 5 to 6 cm deep, 100 to 120 compressions per minute.",
+      "Let the chest rise fully between compressions.",
+      "Continue until help arrives, an AED is ready, or the person starts to move."
+    ],
+    "warnings": [
+      "If you are not trained, do hands-only CPR (compressions only).",
+      "Do not stop to check for a pulse again and again."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Severe bleeding",
+    "icon": "🩸",
+    "severity": "High",
+    "summary": "Heavy bleeding that does not stop on its own.",
+    "steps": [
+      "Call 108 or 112.",
+      "Press firmly on the wound with a clean cloth or bandage.",
+      "If blood soaks through, add more cloth on top. Do not remove the first layer.",
+      "Keep steady pressure and, if possible, raise the injured limb above the heart.",
+      "Keep the person lying down and warm until help arrives."
+    ],
+    "warnings": [
+      "Do not remove objects stuck in the wound.",
+      "Use a tourniquet only if you are trained and pressure is not controlling life-threatening limb bleeding."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Burns",
+    "icon": "🔥",
+    "severity": "Medium",
+    "summary": "Burns from heat, hot liquid, fire or chemicals.",
+    "steps": [
+      "Move away from the source of the burn.",
+      "Cool the burn under cool running water for 20 minutes.",
+      "Remove rings, watches and loose clothing near the burn, unless stuck to the skin.",
+      "Cover loosely with a clean, non-fluffy cloth or cling film.",
+      "Get medical help for large, deep or facial burns, and burns in children."
+    ],
+    "warnings": [
+      "Do not use ice, butter, toothpaste or oil.",
+      "Do not burst blisters."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Choking (adult)",
+    "icon": "😮",
+    "severity": "High",
+    "summary": "A person cannot cough, speak or breathe because something blocks the airway.",
+    "steps": [
+      "Ask 'Are you choking?' and encourage them to keep coughing if they can.",
+      "If they cannot breathe, give up to 5 firm back blows between the shoulder blades.",
+      "If that fails, give up to 5 abdominal thrusts: fist above the navel, pull inwards and upwards.",
+      "Alternate 5 back blows and 5 abdominal thrusts.",
+      "If the person becomes unresponsive, call 108 or 112 and start CPR."
+    ],
+    "warnings": [
+      "For babies under 1 year, use back blows and chest thrusts, not abdominal thrusts."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Broken bone or sprain",
+    "icon": "🦴",
+    "severity": "Medium",
+    "summary": "Pain, swelling or an odd shape after a fall or impact.",
+    "steps": [
+      "Keep the injured part still and support it in the position found.",
+      "Pad and splint above and below the injury if you must move the person.",
+      "Apply a cold pack wrapped in cloth for 15 to 20 minutes.",
+      "Check for numbness, pale or cold skin beyond the injury.",
+      "Get medical help. Call 108 for a suspected neck or back injury and do not move the person."
+    ],
+    "warnings": [
+      "Do not try to straighten the bone.",
+      "Do not give food or drink if surgery may be needed."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Heart attack",
+    "icon": "🫀",
+    "severity": "Critical",
+    "summary": "Chest pain or pressure, sweating, pain in the arm or jaw, shortness of breath.",
+    "steps": [
+      "Call 108 or 112 immediately.",
+      "Help the person sit down and rest in a comfortable position.",
+      "Loosen tight clothing and keep them calm.",
+      "If the operator advises it and the person is not allergic, they may chew one adult aspirin.",
+      "If they stop breathing normally, start CPR."
+    ],
+    "warnings": [
+      "Do not let the person walk or drive to hospital."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Snake bite",
+    "icon": "🐍",
+    "severity": "High",
+    "summary": "A bite from a snake that may be venomous.",
+    "steps": [
+      "Move away from the snake and call 108 or 112.",
+      "Keep the person calm and as still as possible.",
+      "Keep the bitten limb still and at or slightly below heart level.",
+      "Remove rings and tight items before swelling starts.",
+      "Go to a hospital quickly, even if the person feels fine."
+    ],
+    "warnings": [
+      "Do not cut the wound, suck out venom or apply a tight tourniquet.",
+      "Do not try to catch the snake. A photo from a safe distance helps."
+    ]
+  }
+]

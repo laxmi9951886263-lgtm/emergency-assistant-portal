@@ -1,0 +1,40 @@
+<h1>First aid guides</h1>
+<p class="lead">Simple steps to follow until help arrives. These guides do not replace professional care.</p>
+
+<div class="field">
+  <label for="faSearch">Search guides</label>
+  <input id="faSearch" type="search" [formControl]="search" placeholder="Burns, CPR, bleeding...">
+</div>
+
+@if (error) { <p class="alert alert-error" role="alert">{{ error }}</p> }
+
+@if (guides$ | async; as guides) {
+  <div class="grid">
+    @for (g of guides; track g.id) {
+      <app-guide-card [guide]="g" [expanded]="selectedId === g.id" (toggled)="toggle($event)" />
+    } @empty {
+      <p>No guides match your search. Try a shorter word.</p>
+    }
+  </div>
+} @else {
+  <p role="status">Loading guides…</p>
+}
+
+<!-- Unit I: HTML5 multimedia elements -->
+<section aria-labelledby="media-title">
+  <h2 id="media-title">Watch and listen</h2>
+  <figure>
+    <video controls preload="none" width="640">
+      <source src="assets/media/cpr-demo.mp4" type="video/mp4">
+      Your browser cannot play this video. Use the written CPR steps above.
+    </video>
+    <figcaption>Hands-only CPR demonstration (add your own file at assets/media/cpr-demo.mp4).</figcaption>
+  </figure>
+  <figure>
+    <audio controls preload="none">
+      <source src="assets/media/metronome-110bpm.mp3" type="audio/mpeg">
+      Your browser cannot play this audio.
+    </audio>
+    <figcaption>Keep this beat (about 110 per minute) when giving chest compressions.</figcaption>
+  </figure>
+</section>

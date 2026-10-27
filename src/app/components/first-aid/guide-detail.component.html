@@ -1,0 +1,32 @@
+<p><a routerLink="/first-aid">Back to all guides</a></p>
+
+@if (view$ | async; as view) {
+  @if (view.guide; as guide) {
+    <article class="card detail">
+      <h1><span aria-hidden="true">{{ guide.icon }}</span> {{ guide.title }}</h1>
+      <p class="lead">{{ guide.summary }}</p>
+
+      <h2>Steps</h2>
+      <ol class="steps">
+        @for (step of guide.steps; track $index) {
+          <li>{{ step }}</li>
+        }
+      </ol>
+
+      @if (guide.warnings?.length) {
+        <h2>Do not</h2>
+        <ul class="warnings">
+          @for (w of guide.warnings; track $index) {
+            <li>{{ w }}</li>
+          }
+        </ul>
+      }
+
+      <p><a class="btn btn-danger" href="tel:112">Call 112</a></p>
+    </article>
+  } @else {
+    <p class="alert alert-error" role="alert">This guide was not found. Go back and choose another one.</p>
+  }
+} @else {
+  <p role="status">Loading guide…</p>
+}

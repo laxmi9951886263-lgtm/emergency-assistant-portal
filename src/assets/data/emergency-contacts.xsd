@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Schema (XSD) that validates emergency-contacts.xml -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ec="http://emergency-portal.example/contacts"
+           targetNamespace="http://emergency-portal.example/contacts"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="categoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Helpline"/>
+      <xs:enumeration value="Police"/>
+      <xs:enumeration value="Fire"/>
+      <xs:enumeration value="Medical"/>
+      <xs:enumeration value="Disaster"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="phoneType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{3,10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="contacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contact" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="phone" type="ec:phoneType"/>
+              <xs:element name="available" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute name="category" type="ec:categoryType" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

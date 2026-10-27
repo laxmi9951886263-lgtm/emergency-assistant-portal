@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Namespace prefix "ec" avoids name clashes; the schema is emergency-contacts.xsd -->
+<ec:contacts xmlns:ec="http://emergency-portal.example/contacts"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://emergency-portal.example/contacts emergency-contacts.xsd">
+  <ec:contact id="c1" category="Helpline">
+    <ec:name>National Emergency Number</ec:name>
+    <ec:phone>112</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c2" category="Police">
+    <ec:name>Police</ec:name>
+    <ec:phone>100</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c3" category="Fire">
+    <ec:name>Fire Service</ec:name>
+    <ec:phone>101</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c4" category="Medical">
+    <ec:name>Ambulance</ec:name>
+    <ec:phone>102</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c5" category="Medical">
+    <ec:name>Emergency Medical Services</ec:name>
+    <ec:phone>108</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c6" category="Disaster">
+    <ec:name>Disaster Management</ec:name>
+    <ec:phone>1070</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c7" category="Helpline">
+    <ec:name>Women Helpline</ec:name>
+    <ec:phone>1091</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c8" category="Helpline">
+    <ec:name>Childline</ec:name>
+    <ec:phone>1098</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+  <ec:contact id="c9" category="Police">
+    <ec:name>Cyber Crime Helpline</ec:name>
+    <ec:phone>1930</ec:phone>
+    <ec:available>24x7</ec:available>
+  </ec:contact>
+</ec:contacts>
